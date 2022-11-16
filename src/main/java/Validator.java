@@ -1,13 +1,20 @@
 public class Validator {
-    public static boolean validate(String password) {
-        return lengthChecker(password)
+    public static boolean validator1(String password) {
+        return lengthAboveEight(password)
                 & capitalChecker(password)
                 & lowercaseChecker(password)
                 & numberChecker(password)
                 & underscoreChecker(password);
     }
 
-    public static boolean lengthChecker(String password) {
+    public static boolean validator2(String password) {
+        return lengthAboveSix(password)
+                & capitalChecker(password)
+                & lowercaseChecker(password)
+                & numberChecker(password);
+    }
+
+    public static boolean lengthAboveEight(String password) {
         return password.length() >= 8;
     }
 
@@ -55,5 +62,20 @@ public class Validator {
         return false;
 
 
+    }
+
+    public static boolean lengthAboveSix(String password) {
+        return password.length() >= 6;
+    }
+
+    public static boolean lengthAboveSixteen(String password) {
+        return password.length() >= 16;
+    }
+
+    public static boolean validator3(String password) {
+        return lengthAboveSixteen(password)
+                & capitalChecker(password)
+                & lowercaseChecker(password)
+                & underscoreChecker(password);
     }
 }
